@@ -1,0 +1,8 @@
+
+<app-header></app-header>
+<div class="cards">
+    <div class="cards_list" *ngFor="let movie of listCard">
+        <app-card [img]="movie.img" [description]="movie.description" [isLike]="movie.isLike"></app-card>
+    </div>
+</div>
+
