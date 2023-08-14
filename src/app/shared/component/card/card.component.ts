@@ -10,7 +10,7 @@ export class CardComponent implements OnInit {
 
   @Input() img: any ="";
   @Input() description: any ="";
-  @Input() isLike: any ="";
+  @Input() id: any ="";
 
   constructor(private router: Router) { }
 
@@ -18,8 +18,10 @@ export class CardComponent implements OnInit {
   }
 
   details(){
+    console.log(this.id)
+        this.router.navigate(['/detail', this.id]);
     console.info("detalles")
-    this.router.navigate(['/detail']);
+
   }
 
 }

@@ -1,23 +1,27 @@
 .card
-  margin-top: 20px
+  margin-top: 10px
   max-width: 400px
   max-height: 400px 
   &_like
     color: red
   &_overview:hover
     color: white
-    background-color: black 
-    animation-duration: 1s
+    background-color: #495D80
+    animation-duration: 0.5s
     animation-name: overview
   &_overview
-    padding-top: 10px
-    text-align: center
+    overflow-y: hidden
+    padding-top: 2rem
+    padding-left: 1rem
+    padding-right: 1rem
+    text-align: justify
+    text-overflow: clip
     color: transparent
     position: absolute
-    opacity: 0.5
+    opacity: 0.8
     top: 0px
     left: 0px
-    height: 100%
+    height: 85%
     cursor: pointer
   &_overview span
     color: blue
@@ -28,7 +32,7 @@
   
 
   to 
-    opacity: 0.5
+    opacity: 0.8
   
 
 

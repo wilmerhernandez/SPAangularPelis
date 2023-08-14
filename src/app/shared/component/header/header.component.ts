@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../service/movies/movies.service';
 import { listCardsMock } from '../../constansMock/listCardsMock';
-import { loadmovies } from '../../state/actions/actionGames';
 import { Store } from '@ngrx/store';
+import { loadMovies } from '../../state/actions/actionGames';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
     this.servicesMovies.getFilterMovies('', '', miSelect.value).subscribe(
       (response: any) => {
         console.log(response);
-        this.store.dispatch(loadmovies({ movies: response.medias }));
+        this.store.dispatch(loadMovies({ movies: response.medias }));
       },
       (error) => {
         console.error(error);
@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
       (response: any) => {
         console.log(response);
         this.totalPages = response.totalPage;
-        this.store.dispatch(loadmovies({ movies: response.medias }));
+        this.store.dispatch(loadMovies({ movies: response.medias }));
       },
       (error) => {
         console.error(error);

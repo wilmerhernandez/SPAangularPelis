@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { listCardsMock } from 'src/app/shared/constansMock/listCardsMock';
 import { MoviesService } from 'src/app/shared/service/movies/movies.service';
-import { showmovie } from 'src/app/shared/state/actions/actionGames';
+import { showMovie } from 'src/app/shared/state/actions/actionGames';
 import { selectormovies } from 'src/app/shared/state/selectors/game.selector';
 
 @Component({
@@ -17,7 +17,7 @@ export class ListCardsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.store.dispatch(showmovie())
+    this.store.dispatch(showMovie())
     this.listCard=this.store.select(selectormovies);
 
   }

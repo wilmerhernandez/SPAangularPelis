@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endpoint:"https://b607-161-10-113-2.ngrok-free.app/media"
+  endpoint:"https://d084-161-10-113-2.ngrok-free.app/media"
 };
 
 /*

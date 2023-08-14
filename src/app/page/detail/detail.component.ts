@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { detail } from 'src/app/shared/constansMock/detailMock';
 
 @Component({
   selector: 'app-detail',
@@ -8,11 +7,14 @@ import { detail } from 'src/app/shared/constansMock/detailMock';
   styleUrls: ['./detail.component.sass']
 })
 export class DetailComponent implements OnInit {
-  data:any= detail;
-  constructor(private route: ActivatedRoute) { }
+  data:any;
+  resolvedData: any;
+  constructor(private route: ActivatedRoute) { 
+    this.data = this.route.snapshot.data.resolvedData;
+    console.log(this.data);
+  }
 
   ngOnInit(): void {
-    this.data = detail
 
   }
   segundosAMinutos(data:string) {

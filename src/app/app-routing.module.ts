@@ -5,7 +5,7 @@ import { DetailComponent } from './page/detail/detail.component';
 import { ResolveService } from './shared/service/guard/resolve.service';
 
 const routes: Routes = [
-  { path: 'detail', component: DetailComponent, resolve: {
+  { path: 'detail/:dato', component: DetailComponent, resolve: {
     resolvedData: ResolveService 
   } },
   { path: 'listCard', component: ListCardsComponent },
