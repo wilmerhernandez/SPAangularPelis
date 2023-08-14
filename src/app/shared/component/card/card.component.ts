@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -11,9 +12,14 @@ export class CardComponent implements OnInit {
   @Input() description: any ="";
   @Input() isLike: any ="";
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  details(){
+    console.info("detalles")
+    this.router.navigate(['/detail']);
   }
 
 }

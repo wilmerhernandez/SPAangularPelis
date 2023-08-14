@@ -1,13 +1,17 @@
-<p>
+<div class="container">
     <mat-toolbar >
-    <div class="tool">
-              <span>MiguePelis</span>
+    <div class="tool">              
+      <div class="tool_button">
+        <span>MiguePelis</span>
+        <button mat-button (click)="filterVideo('movie')">Movies</button>
+        <button mat-button (click)="filterVideo('tv')">Series</button>
+      </div>
       <div class="tool_nav">
-        <input type="text" placeholder="Ingresa pelicula a buscar"/>
+        <input type="text" placeholder="Ingresa pelicula a buscar" id="Select" (input)="changeInput()"/>
       </div>
     </div>
 
         
       
     </mat-toolbar>
-  </p>
+  </div>
