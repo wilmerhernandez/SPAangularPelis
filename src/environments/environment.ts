@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  endpoint:"https://d084-161-10-113-2.ngrok-free.app/media"
+  endpoint:"https://8ea7-186-82-84-6.ngrok-free.app/media",
+  oauthEndpoint:"https://run.mocky.io/v3/bee9ba54-17ee-4b10-8ea5-895e9e6628f8/auth/login"
 };
 
 /*

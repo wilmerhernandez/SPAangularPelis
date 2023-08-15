@@ -12,11 +12,12 @@ export class HttpInterceptorService implements HttpInterceptor {
 
     const modifiedRequest = req.clone({
       setHeaders: {
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGVJZCI6MSwiZW1haWwiOiJtZnZhQG1haWwuY29tIiwiaWF0IjoxNjkxOTQyODI4LCJleHAiOjE2OTIwMjkyMjh9.87pvoGB7pBsgmgaOjJxfY8878hyGkdyDxWHU41L4DQ4',
+        'Authorization': 'Bearer '+localStorage.getItem('token'),
         'accept': 'application/json',
         "ngrok-skip-browser-warning": "69420"
       }
     });
+    
     
     return next.handle(modifiedRequest).pipe(
       catchError((error: HttpErrorResponse) => {

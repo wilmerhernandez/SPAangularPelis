@@ -1,0 +1,13 @@
+
+<div mat-dialog-content>
+  <p>{{ data.modal == 1 ? "Comenta" : "califica" }}</p>
+  
+  <div [hidden]="isText">
+    <input type="number" max="10" min="0" id="rate"/>
+  </div>
+
+  <div [hidden]="!isText">
+    <input type="text" id="note"/>
+  </div>
+  <button mat-flat-button (click)="onNoClick()">Enviar</button>
+</div>

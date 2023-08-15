@@ -1,16 +1,28 @@
 <div class="banner">
-	<img [src]="data.detail.backdropPath" class="bg" alt="bg img">
-	<div class="content">
-        <h1>{{data.detail.title}}</h1>
-		<h4>
+  <img [src]="data.detail.backdropPath" class="bg" alt="bg img" />
+  <div class="content">
+    <h1>{{ data.detail.title }}</h1>
+    <h4>
+      <span>2020</span>
+      <span *ngIf="data.detail.adult"><i>+18</i></span>
+      <span>{{ segundosAMinutos(data.detail.runtime) }}</span>
+      <div>
+        Generos:
+        <span *ngFor="let gen of data.detail.genres">{{ gen.name }}</span>
+      </div>
+    </h4>
+    <p>{{ data.overview }}</p>
 
-			<span>2020</span>
-			<span *ngIf="data.detail.adult"><i>+18</i></span>
-			<span>{{segundosAMinutos(data.detail.runtime)}}</span>
-			<div>Generos: <span *ngFor="let gen of data.detail.genres">{{gen.name}}</span></div>
-		</h4>
-		<p>{{data.overview}}</p>
-        
-	</div>
-    <a class="play" href="{{data.homepage}}"><img src="https://i.imgur.com/vcvm7c8.png" alt="play">To Home</a>
+    <button mat-stroked-button color="primary" (click)="openDialog(1)">
+      Comment
+    </button>
+    <button mat-stroked-button color="primary" (click)="openDialog(2)">
+ 		Rate
+    </button>
+  </div>
+  <a class="play" href="{{ data.homepage }}"
+    ><img src="https://i.imgur.com/vcvm7c8.png" alt="play" />To Home</a
+  >
 </div>
+
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import { ModalComponent } from 'src/app/shared/component/modal/modal.component';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailComponent implements OnInit {
   data:any;
   resolvedData: any;
-  constructor(private route: ActivatedRoute) { 
+  constructor(private route: ActivatedRoute,public dialog: MatDialog) { 
     this.data = this.route.snapshot.data.resolvedData;
     console.log(this.data);
   }
@@ -17,6 +18,19 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+
+  openDialog(data:number): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      data: {modal:data},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+
   segundosAMinutos(data:string) {
     var minutos = Math.floor(parseInt(data) / 60);
     var segundosRestantes = parseInt(data) % 60;

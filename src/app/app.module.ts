@@ -17,6 +17,10 @@ import {MatMenuModule} from '@angular/material/menu';
 import { DetailComponent } from './page/detail/detail.component';
 import { StoreModule } from '@ngrx/store';
 import { moviesDetailReducer, moviesReducer } from './shared/state/reducers/game.reducer';
+import { PaginatorComponent } from './shared/component/paginator/paginator.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +29,7 @@ import { moviesDetailReducer, moviesReducer } from './shared/state/reducers/game
     CardComponent,
     HeaderComponent,
     DetailComponent,
+    PaginatorComponent,
     
   ],
   imports: [
@@ -37,6 +42,9 @@ import { moviesDetailReducer, moviesReducer } from './shared/state/reducers/game
     MatToolbarModule,
     MatPaginatorModule,
     MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
     StoreModule.forRoot({movies:moviesReducer,movie:moviesDetailReducer})
   ],  
   providers: [ {
